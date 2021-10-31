@@ -1,0 +1,17 @@
+# docker compose version
+version: '3.8'
+
+# configure container services 
+services:
+  # configure of gcp_functions
+  gcp_functions: 
+    build:
+      context: .
+      dockerfile: ./gcp/cloudfunctions/python/Dockerfile
+    container_name: 'function_python'
+    working_dir: '/usr/'
+    tty: true
+    # volumes: 
+    #   - ../src/python:/usr/src
+# volumes:
+#   src:

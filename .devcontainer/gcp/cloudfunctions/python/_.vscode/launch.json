@@ -1,0 +1,60 @@
+{
+    "version": "0.2.0",
+    "inputs": [
+        {
+            "type": "promptString",
+            "id": "prompt",
+            "description": "please write directory name in which you want to debug",
+            "default": "default"
+        }
+    ],
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "internalConsole"
+        },
+        {
+            "name": "Python: functions_framework_http",
+            "type": "python",
+            "request": "launch",
+            "console": "internalConsole",
+            "module": "functions_framework",
+            "args": [
+                "--host",
+                "0.0.0.0",
+                "--port",
+                "5000",
+                "--target",
+                "${input:prompt}",
+                "--signature-type",
+                "http",
+                "--source",
+                "${file}",
+                "--debug"
+            ]
+        },
+        {
+            "name": "Python: functions_framework_background",
+            "type": "python",
+            "request": "launch",
+            "console": "internalConsole",
+            "module": "functions_framework",
+            "args": [
+                "--host",
+                "0.0.0.0",
+                "--port",
+                "5000",
+                "--target",
+                "${input:prompt}",
+                "--signature-type",
+                "event",
+                "--source",
+                "${file}",
+                "--debug"
+            ]
+        }
+    ]
+}
