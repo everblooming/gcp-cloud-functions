@@ -10,8 +10,8 @@ RUN apt-get update
 WORKDIR /usr
 
 # setting launch.json
-RUN mkdir usr/.vscode
-COPY  ./gcp/cloudfunctions/python/_.vscode usr/.vscode
+RUN mkdir .vscode
+COPY  ./gcp/cloudfunctions/python/_.vscode .vscode
 
 # installing liblaries
 RUN pip3 install \
