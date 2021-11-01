@@ -4,7 +4,7 @@
         {
             "type": "promptString",
             "id": "prompt",
-            "description": "please write directory name in which you want to debug",
+            "description": "please write function name in which you want to debug",
             "default": "default"
         }
     ],
